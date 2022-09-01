@@ -25,7 +25,8 @@
     </head>
     <body class="antialiased">
     @livewire("navigation-bar")
-    <div class="relative flex items-top justify-center h-96 bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+    @livewire("hero")
+    <div class="relative flex items-top justify-center h-64 bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
         <div class="px-2">
             <div class="flex -mx-2">
                 <div class="w-1/3 px-2">

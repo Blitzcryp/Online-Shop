@@ -17,6 +17,15 @@ Route::get('/', function () {
     return view('welcome');
 })->name("homepage");
 
+Route::get('/events', function () {
+    return view('errors.404');
+})->name("events");
+
+Route::get('/volunteer', function () {
+    return view('errors.404');
+})->name("volunteer");
+
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
