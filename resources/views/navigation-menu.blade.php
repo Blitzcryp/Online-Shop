@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <x-jet-application-mark class="block h-9 w-auto" />
+                        <img class="block h-12 w-auto" src="https://camo.githubusercontent.com/d79f2226dc0617713179f178b67f578ca3708d1bcd817f4c9163e03b695661ac/68747470733a2f2f692e696d6775722e636f6d2f616674516371522e706e67"/>
                     </a>
                 </div>
 
@@ -14,6 +14,13 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
+                    </x-jet-nav-link>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('homepage') }}" :active="request()->routeIs('home')">
+                        {{ __('Homepage') }}
                     </x-jet-nav-link>
                 </div>
             </div>
