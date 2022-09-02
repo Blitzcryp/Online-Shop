@@ -1,7 +1,11 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+
+            <a href="{{ route('homepage') }}" :active="request()->routeIs('home')">
+                <img src="{{url('/images/Untitled (1).svg')}}" style="width: 150px; height: 150px" alt="logo" class="object-center">
+
+            </a>
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />

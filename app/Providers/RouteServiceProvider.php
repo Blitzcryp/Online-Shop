@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EventsController;
+use App\Http\Controllers\HomepageController;
+use App\Http\Controllers\VolunteerController;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Http\Request;
@@ -27,6 +31,20 @@ class RouteServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->configureRateLimiting();
+
+        $this->group(["prefix" => "api", "middleware" => "api"], function() {
+
+        });
+
+        $this->group(["prefix" => "", "middleware" => "web"], function() {
+            $this->get("/", HomepageController::class)->name("homepage");
+            $this->get("/events", EventsController::class)->name("events");
+            $this->get("/volunteer", VolunteerController::class)->name("volunteer");
+
+            $this->group(["middleware" => ["auth:sanctum", config("jetstream.auth_session"), "verified"]], function() {
+                $this->get("/dashboard", DashboardController::class)->name("dashboard");
+            });
+        });
 
         $this->routes(function () {
             Route::middleware('api')
