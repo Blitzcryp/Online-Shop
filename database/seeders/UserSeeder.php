@@ -22,7 +22,17 @@ class UserSeeder extends Seeder
             "email" => "comancosmin112+ticketApp@gmail.com",
             "email_verified_at" => Carbon::now()->addHour()->toDateTimeString(),
             "password" => Hash::make("parola12345"),
-            "remember_token" => Hash::make("parola54321"),
+            "remember_token" => Hash::make("parola12345"),
+            "created_at" => Carbon::now()->toDateTimeString(),
+            "updated_at" => Carbon::now()->toDateTimeString(),
+        ]);
+
+        User::create(            [
+            "name" => "Coman Cosmin Admin",
+            "email" => "comancosmin1122@gmail.com",
+            "email_verified_at" => Carbon::now()->addHour()->toDateTimeString(),
+            "password" => Hash::make("parola12345"),
+            "remember_token" => Hash::make("parola12345"),
             "created_at" => Carbon::now()->toDateTimeString(),
             "updated_at" => Carbon::now()->toDateTimeString(),
         ]);
